@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from settings import Setting as Set
+from settings import setti
 import uvicorn
 
 app = FastAPI()
@@ -11,4 +11,4 @@ def work_test():
 
 
 if __name__ == '__main__':
-    uvicorn.run(Set.HOST_APP_ADDRESS, host=Set.HOST_ADDRESS, reload=Set.RELOAD_FLAG)
+    uvicorn.run(setti.HOST_APP_ADDRESS, host=setti.HOST_ADDRESS, reload=setti.RELOAD_FLAG)

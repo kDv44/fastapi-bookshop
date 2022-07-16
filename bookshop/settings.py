@@ -7,7 +7,11 @@ class Setting(BaseSettings):
     HOST_PORT: int = 8080
     RELOAD_FLAG: bool = True
 
-    DB_USER: str
-    DB_PASSWORD: str
-    DB_HOST: str
-    
+    DB_PASSWORD: str = '1234'
+    DB_HOST: str = 'localhost:5432'
+    DB_IMAGE: str = 'postgres'
+
+
+setti = Setting()
+
+url_db = f'postgresql://postgres:{setti.DB_PASSWORD}@{setti.DB_HOST}/{setti.DB_IMAGE}'

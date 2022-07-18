@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 from settings import setti
+from services.api import router as api_router
 import uvicorn
 
 app = FastAPI()
+
+app.include_router(api_router, prefix="/bookshop")
 
 
 @app.get('/')

@@ -1,5 +1,4 @@
 import pydantic as p
-import uuid
 
 
 class CreateUser(p.BaseModel):
@@ -8,12 +7,18 @@ class CreateUser(p.BaseModel):
     password: str
     is_adminer: bool
 
+    class Config:
+        orm_mode = True
+
 
 class GetUser(p.BaseModel):
-    id: uuid
+    id: int
     email: str
     username: str
     is_adminer: bool
+
+    class Config:
+        orm_mode = True
 
 
 class AuthUser(p.BaseModel):

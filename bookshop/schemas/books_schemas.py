@@ -1,5 +1,4 @@
 import pydantic as p
-import uuid
 
 
 class CreateBooks(p.BaseModel):
@@ -11,10 +10,9 @@ class CreateBooks(p.BaseModel):
 
 
 class GetBooks(p.BaseModel):
-    id: uuid
+    id: int
     title: str
     author: str
     genre: str
     number_pages: int
     number_amount: int
-

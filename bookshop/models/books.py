@@ -3,9 +3,7 @@ import sqlalchemy as sa
 
 
 class Books(database.BaseModel):
-    __tablename__ = 'Books'
-
-    book_id: int = sa.Column(sa.Integer())
+    __tablename__ = 'books'
 
     title: str = sa.Column(sa.String(length=100))
     author: str = sa.Column(sa.String(length=100))

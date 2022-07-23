@@ -1,4 +1,6 @@
+import uuid
 import pydantic as p
+import typing as t
 
 
 class CreateUser(p.BaseModel):
@@ -12,7 +14,7 @@ class CreateUser(p.BaseModel):
 
 
 class GetUser(p.BaseModel):
-    id: int
+    id: uuid.UUID
     email: str
     username: str
     is_adminer: bool
@@ -24,3 +26,17 @@ class GetUser(p.BaseModel):
 class AuthUser(p.BaseModel):
     username: str
     password: str
+
+
+class AccessToken(p.BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenPayload(p.BaseModel):
+    sub: t.Optional[str] = None
+
+
+class Token(p.BaseModel):
+    token_type: str
+    access_token: str

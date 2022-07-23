@@ -11,6 +11,8 @@ class Setting(BaseSettings):
     DB_HOST: str = 'localhost:5432'
     DB_IMAGE: str = 'postgres'
 
+    SECRET_KEY: str = 'UXRbyEyXBD73TjMVz7L3jXKM7TjrwFu7'
+
 
 setti = Setting()
 

@@ -1,11 +1,15 @@
+import uvicorn
+
 from fastapi import FastAPI
 from settings import setti
-from services.api import router as api_router
-import uvicorn
+from services.books_api import books_router
+from services.users_api import users_router
+
 
 app = FastAPI()
 
-app.include_router(api_router, prefix="/bookshop")
+app.include_router(books_router, tags=["books"], prefix="/bookshop")
+app.include_router(users_router, tags=["users"], prefix="/bookshop/users")
 
 
 @app.get('/')

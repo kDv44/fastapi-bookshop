@@ -3,12 +3,10 @@ import sqlalchemy as sa
 
 
 class Users(database.BaseModel):
-    __tablename__ = 'Users'
+    __tablename__ = 'users'
 
-    user_id: int = sa.Column(sa.Integer())
+    username: str = sa.Column(sa.String(length=100), unique=True, nullable=False)
+    email: str = sa.Column(sa.String(length=100), unique=True, nullable=False)
+    hash_password = sa.Column(sa.String(length=1000), default="")
 
-    username: str = sa.Column(sa.String(length=100))
-    email: str = sa.Column(sa.String(length=100))
-    password: str = sa.Column(sa.String(length=200))
-
-    is_adminer: bool = sa.Column(sa.Boolean(), default=False)
+    is_adminer: bool = sa.Column(sa.Boolean, default=False)
